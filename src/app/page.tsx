@@ -1,101 +1,191 @@
-import Image from "next/image";
+import React from 'react';
+import '../styles/globals.css';
+import { FC } from 'react';
 
-export default function Home() {
+const Home: FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+      {/* Navbar & Hero Start */}
+      <div className="container-fluid position-relative p-0">
+        <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+          <a href="#" className="navbar-brand p-0">
+            <img src="img/logo.png" alt="Logo" />
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
           >
-            Read our docs
-          </a>
+            <span className="fa fa-bars"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarCollapse">
+            <div className="navbar-nav ms-auto py-0">
+              <a href="/" className="nav-item nav-link active">
+                Home
+              </a>
+              <a href="/about" className="nav-item nav-link">
+                About
+              </a>
+              <a href="/booking" className="nav-item nav-link">
+                Booking
+              </a>
+              <a href="/contact" className="nav-item nav-link">
+                Contact
+              </a>
+            </div>
+            <a href="#" className="btn btn-primary rounded-pill py-2 px-4">
+              Register
+            </a>
+          </div>
+        </nav>
+
+        <div className="container-fluid bg-primary py-5 mb-5 hero-header">
+          <div className="container py-5">
+            <div className="row justify-content-center py-5">
+              <div className="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                <h1 className="display-3 text-white mb-3 animated slideInDown">
+                  Enjoy Your Vacation With Us
+                </h1>
+                <p className="fs-4 text-white mb-4 animated slideInDown">
+                  Tempor erat elitr rebum at clita diam amet diam et eos erat ipsum lorem sit
+                </p>
+                <div className="position-relative w-75 mx-auto animated slideInDown">
+                  <input
+                    className="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5"
+                    type="text"
+                    placeholder="Eg: Thailand"
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2"
+                    style={{ marginTop: '7px' }}
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      {/* Navbar & Hero End */}
+
+      {/* About Start */}
+      <div className="container-xxl py-5">
+        <div className="container">
+          <div className="row g-5">
+            <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style={{ minHeight: '400px' }}>
+              <div className="position-relative h-100">
+                <img
+                  className="img-fluid position-absolute w-100 h-100"
+                  src="img/about.jpg"
+                  alt=""
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+            </div>
+            <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+              <h6 className="section-title bg-white text-start text-primary pe-3">About Us</h6>
+              <h1 className="mb-4">
+                Welcome to <span className="text-primary">Tourist</span>
+              </h1>
+              <p className="mb-4">
+                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
+                erat ipsum et lorem et sit.
+              </p>
+              <p className="mb-4">
+                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+              </p>
+              <div className="row gy-2 gx-4 mb-4">
+                <div className="col-sm-6">
+                  <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                </div>
+                <div className="col-sm-6">
+                  <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                </div>
+                <div className="col-sm-6">
+                  <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                </div>
+                <div className="col-sm-6">
+                  <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                </div>
+                <div className="col-sm-6">
+                  <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+                </div>
+                <div className="col-sm-6">
+                  <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                </div>
+              </div>
+              <a className="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* About End */}
+
+      {/* Booking Start */}
+      <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div className="container">
+          <div className="booking p-5">
+            <div className="row g-5 align-items-center">
+              <div className="col-md-6 text-white">
+                <h6 className="text-white text-uppercase">Booking</h6>
+                <h1 className="text-white mb-4">Online Booking</h1>
+                <p className="mb-4">
+                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.
+                </p>
+                <p className="mb-4">
+                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                </p>
+                <a className="btn btn-outline-light py-3 px-5 mt-2" href="">Read More</a>
+              </div>
+              <div className="col-md-6">
+                <h1 className="text-white mb-4">Book A Tour</h1>
+                <form>
+                  <div className="row g-3">
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <input type="text" className="form-control bg-transparent" id="name" placeholder="Your Name" />
+                        <label htmlFor="name">Your Name</label>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <input type="email" className="form-control bg-transparent" id="email" placeholder="Your Email" />
+                        <label htmlFor="email">Your Email</label>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-floating date" id="date3" data-target-input="nearest">
+                        <input type="text" className="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                        <label htmlFor="datetime">Date & Time</label>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <select className="form-select bg-transparent" id="select1">
+                          <option value="1">Destination 1</option>
+                          <option value="2">Destination 2</option>
+                          <option value="3">Destination 3</option>
+                        </select>
+                        <label htmlFor="select1">Destination</label>
+                      </div>
+                    </div>
+                    <div className="col-12">
+                      <button type="submit" className="btn btn-primary w-100 py-3">Book Now</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Booking End */}
     </div>
   );
-}
+};
+
+export default Home;
